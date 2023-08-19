@@ -1,4 +1,6 @@
-tree_height = int(input("How tall is the tree? "))
+# This creates a tree from user input
+
+tree_height = int(input("How tall is your tree? "))
 
 spaces = tree_height - 1
 hashes = 1
