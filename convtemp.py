@@ -1,4 +1,5 @@
-convert = input("Enter 'c' to convert Celsius to Fahrenheit, 'f' to convert Fahrenheit to Celsius: ")
+prompt = "Enter 'c' for Celsius to Fahrenheit, 'f' for Fahrenheit to Celsius: "
+convert = input(prompt)
 
 
 if convert == "c":
