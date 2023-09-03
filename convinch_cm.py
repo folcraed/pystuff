@@ -15,4 +15,4 @@ elif conv_which == "c":
     converted = inches / 0.39370
     print(f"{inches} inches equal {converted:.1f} centimeters")
 else:
-    print("Cant's convert that!")
+    print("Can't convert that!")

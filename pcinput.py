@@ -1,4 +1,5 @@
 def get_float(prompt):
+    """Prompts for a floating number and ensures the input is a float"""
     while True:
         try:
             num = float(input(prompt))
@@ -9,6 +10,7 @@ def get_float(prompt):
 
 
 def get_integer(prompt):
+    """Prompts for an integer and ensures the input is an integer"""
     while True:
         try:
             num = int(input(prompt))
@@ -19,11 +21,13 @@ def get_integer(prompt):
 
 
 def get_string(prompt):
+    """Prompts for a string of any kind, be it characters or numerals"""
     line = input(prompt)
     return line.strip()
 
 
 def get_letter(prompt):
+    """Prompts for a single character ensuring only a single one is entered"""
     while True:
         line = input(prompt)
         line = line.strip()
