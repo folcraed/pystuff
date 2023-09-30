@@ -11,7 +11,7 @@ if conv_which == "m":
     converted = meters * 3.2808
     print(f"{meters} meters equal {converted:.1f} feet")
 elif conv_which == "f":
-    feet = int(input("Hom many feet? "))
+    feet = int(input("How many feet? "))
     converted = feet * 0.3048
     print(f"{feet} feet equal {converted:.1f} meters")
 else:
