@@ -4,7 +4,7 @@ example a tuple of words are given, then different ways of searching for a
 particular letter in each word is shown.
 """
 
-fruits = ("Cantelope", "Apple", "Pear", "Grape", "Cherry", "Orange", "Mango")
+fruits = ("Cantaloupe", "Apple", "Pear", "Grape", "Cherry", "Orange", "Mango")
 
 # This one looks for the letter "C" in the beginning of the word by string index.
 for item in fruits:
@@ -13,13 +13,13 @@ for item in fruits:
     print(item)
 
 # This one looks for the letter "C" by finding it in the first place in the string.
-# If find() returns 0 (is true), it prints the comment plus the string.
+# When find() returns 0 (is true), it prints the comment plus the string.
 for item in fruits:
     if item.find("C", 0) == 0:
         print("This one starts with C:", end=" ")
     print(item)
 
-# This example searches when the location of the letter isn't known. If find()
+# This example searches when the location of the letter isn't known. When find()
 # in not -1 (false), it prints the comment plus the string. Because find() returns
 # the position if found, or -1 if not, we test for -1.
 for item in fruits:
