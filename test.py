@@ -6,13 +6,20 @@ save it under a new file name.
 
 from pcinput import get_integer
 
-total = 0
-count = 0
-entry = 1
-while entry != 0:
-    prompt = get_integer("Please enter a number, 0 to exit: ")
-    if prompt == 0:
-        print("The total is", total, "and the average is", total / count)
-        exit()
-    count += 1
-    total += prompt
+TOTAL = 10
+low = 0
+high = 0
+div_three = 0
+
+for x in range(TOTAL):
+    num = get_integer("Please enter number " + str(x+1) + ": ")
+    if x == 0:
+        low = num
+    if num < low:
+        low = num
+    if num > high:
+        high = num
+    if num % 3 == 0:
+        div_three += 1
+
+print(f"The lowest was {low}, the highest {high}, and {div_three} were divisable by 3.")
