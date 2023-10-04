@@ -4,16 +4,24 @@ If there's something that I would like to save for the future, I will
 save it under a new file name.
 """
 
-PIRATES = 6
-coconuts = 0
 
-while True:
-    coconuts += 1
-    pile = coconuts
-    for i in range(PIRATES):
-        if pile % PIRATES != 1:
-            break
-        pile = (PIRATES - 1) * int((pile - 1) / PIRATES)
-    if pile % PIRATES == 1:
-        break
-print(coconuts)
+from pcinput import get_string
+from math import sqrt
+
+user_input = get_string("Enter a floating point number: ")
+
+x = user_input.find(".")
+
+
+def getFraction(val):
+    """Takes the user supplied number string and returns the decimal part."""
+    result = ""
+    for i in range(x + 1, len(val)):
+        result += val[i]
+    return result
+
+
+decimals = getFraction(user_input)
+print(f"The fractional numbers are {decimals}.")
+squareroot = sqrt(int(decimals))
+print(f"That number's square root is {squareroot:.2f}.")
