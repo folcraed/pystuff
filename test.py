@@ -4,24 +4,28 @@ If there's something that I would like to save for the future, I will
 save it under a new file name.
 """
 
-
 from pcinput import get_string
-from math import sqrt
-
-user_input = get_string("Enter a floating point number: ")
-
-x = user_input.find(".")
 
 
-def getFraction(val):
-    """Takes the user supplied number string and returns the decimal part."""
-    result = ""
-    for i in range(x + 1, len(val)):
-        result += val[i]
-    return result
+def findCommon(word1, word2):
+    """
+    This takes two words the user enters and compares them to each other,
+    looking for matching characters. The number of matches are returned."""
+    common = ""
+    for letter in word1:
+        if (letter in word2) and (letter not in common):
+            common += letter
+    if common == "":
+        return 0
+    else:
+        return len(common)
 
 
-decimals = getFraction(user_input)
-print(f"The fractional numbers are {decimals}.")
-squareroot = sqrt(int(decimals))
-print(f"That number's square root is {squareroot:.2f}.")
+def main():
+    word1 = get_string("Enter a word: ")
+    word2 = get_string("Enter another word: ")
+    print(f"The words have {findCommon(word1, word2)} letters in common.")
+
+
+if __name__ == "__main__":
+    main()
