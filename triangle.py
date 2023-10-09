@@ -14,4 +14,4 @@ side2 = get_float("Enter the length of the second side: ")
 side3 = sqrt(side1**2 + side2**2)
 
 print()
-print("The length of the diagonal is {:.2f}.".format(side3))
+print(f"The length of the diagonal is {side3:.2f}.")
