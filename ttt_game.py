@@ -24,15 +24,11 @@ def display_board(b):
         print()
 
 
-# Display the initial board
-display_board(board)
-
-
 def get_row_column(r, c):
     """Gets the placement for the player's token, and places it on
     the board. If the player enters a space already taken, it gives
     a warning and let's them try again, using recursion."""
-    placement = input("Enter the row and column you choose, separate with a space: ")
+    placement = input("Enter the row and column you choose: ")
     r = int(placement[0]) - 1
     c = int(placement[-1]) - 1
     if board[r][c] != "-":
@@ -70,13 +66,15 @@ def winner(b):
 # Start the game
 move = 0
 while True:
-    get_row_column(r, c)
     display_board(board)
+    get_row_column(r, c)
     if winner(board):
+        display_board(board)
         print(f"Player {user} has won!")
         break
     move += 1
     if move == MAXMOVE:  # If all 9 spaces are taken, call the game a draw
+        display_board(board)
         print("Sorry, it's a draw.")
         break
     user = switch_player(user)
