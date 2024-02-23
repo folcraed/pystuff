@@ -1,3 +1,4 @@
+# Connects to SQLite and creates a new database with tables
 import sqlite3
 from sqlite3 import Error
 
@@ -5,26 +6,26 @@ path = "./test.db"
 
 
 # Create the connection to the database
-def create_connection(path):
-    connection = None
+def create_connection(the_path):
+    c_connection = None
     try:
-        connection = sqlite3.connect(path)
+        c_connection = sqlite3.connect(the_path)
         print("Connection to SQLite DB successful")
     except Error as e:
         print(f"The error '{e}' occurred")
 
-    return connection
+    return c_connection
 
 
 connection = create_connection(path)
 
 
 # Function to work with the data
-def execute_query(connection, query):
-    cursor = connection.cursor()
+def execute_query(q_connection, query):
+    cursor = q_connection.cursor()
     try:
         cursor.execute(query)
-        connection.commit()
+        q_connection.commit()
         print("Query executed successfully")
     except Error as e:
         print(f"The error '{e}' occurred")
@@ -78,8 +79,9 @@ execute_query(connection, create_comments_table)
 execute_query(connection, create_likes_table)
 
 
-# Add data to the tables. Normally these would be functions that add a
-# record at a time. They most likely would be placed in a separate module.
+# From here we're adding data to the tables. Normally these would be functions that add a
+# record at a time. The functions could be placed in a separate module, though the top
+# would be the same whether creating or accessing a database.
 # In this example we just want to populate the database
 create_users = """
 INSERT INTO
