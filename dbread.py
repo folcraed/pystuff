@@ -168,13 +168,19 @@ for post_like in post_likes:
 
 print()
 
-# In this example, prints all the posts from a certain user
-select_post_description = "SELECT description FROM posts WHERE id = 2"
+user = input("What user are you looking for?: ")
+
+# In this example, prints parts of the user's information
+select_post_description = (
+    "SELECT name, age, nationality FROM users WHERE name = '%s'" % user
+)
 
 post_description = execute_read_query(connection, select_post_description)
 
 for description in post_description:
-    print(description)
+    print(description)  # This was original output
+    (name, age, lives) = description  # This unpacks it to a regular tuple
+    print(f"{name} is {age} years old, and lives in {lives}.")
 
 print()
 
