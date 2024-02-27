@@ -19,13 +19,7 @@ newtext = ""
 
 for word in wordlist:
     # Correct any errant capitalization
-    if (
-        len(word) > 2
-        and word[0] >= "A"
-        and word[0] <= "Z"
-        and word[1:] >= "A"
-        and word[1:] <= "Z"
-    ):
+    if len(word) > 2 and "A" <= word[0] <= "Z" and "A" <= word[1:] <= "Z":
         word = word[0] + word[1:].lower()
 
     # Capitalize any day of the week reference
@@ -33,10 +27,10 @@ for word in wordlist:
         word = word[0].upper() + word[1:]
 
     # Correct any reverse capitalization
-    if word[0] >= "a" and word[0] <= "z":
+    if "a" <= word[0] <= "z":
         allcaps = True
         for c in word[1:]:
-            if not (c >= "A" and c <= "Z"):
+            if not ("A" <= c <= "Z"):
                 allcaps = False
                 break
         if allcaps:

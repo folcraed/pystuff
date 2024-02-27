@@ -11,7 +11,7 @@ used properly.
 """
 
 
-from pc_maze import entrance, exit, connected
+from pc_maze import the_entrance, the_exit, connected
 
 
 def leads_to_exit(comingfrom, cell, depth):
@@ -21,9 +21,9 @@ def leads_to_exit(comingfrom, cell, depth):
     it has searched.
     """
     indent = depth * 4 * " "
-    if cell == exit():
+    if cell == the_exit():
         return True
-    for i in range(entrance(), exit() + 1):
+    for i in range(the_entrance(), the_exit() + 1):
         if i == comingfrom:
             continue
         if not connected(cell, i):
@@ -35,7 +35,7 @@ def leads_to_exit(comingfrom, cell, depth):
     return False
 
 
-if leads_to_exit(0, entrance(), 0):
+if leads_to_exit(0, the_entrance(), 0):
     print("Path found!")
 else:
     print("Path not found")
@@ -47,9 +47,9 @@ def find_the_exit(comingfrom, cell):
     This shows the steps taken to find the exit as a list, it does
     not show all the steps, only the solution.
     """
-    if cell == exit():
-        return "{}".format(exit())
-    for i in range(entrance(), exit() + 1):
+    if cell == the_exit():
+        return "{}".format(the_exit())
+    for i in range(the_entrance(), the_exit() + 1):
         if i == comingfrom:
             continue
         if not connected(cell, i):
@@ -60,8 +60,8 @@ def find_the_exit(comingfrom, cell):
     return ""
 
 
-check = find_the_exit(0, entrance())
-if check != "":
-    print(f"Path found! {check}")
+checked = find_the_exit(0, the_entrance())
+if checked != "":
+    print(f"Path found! {checked}")
 else:
     print("Path not found")

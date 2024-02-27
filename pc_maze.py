@@ -31,9 +31,9 @@ def connected(x, y):
     return False
 
 
-def entrance():
+def the_entrance():
     return 1
 
 
-def exit():
+def the_exit():
     return 16

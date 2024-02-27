@@ -34,7 +34,8 @@ english_dutch = {
     "sheds": "schuren",
 }
 
-string = "Last week The Royal Festival Hall saw the first performance of a new symphony by one of the world's leading modern composers, Arthur 'Two Sheds' Jackson"
+string = """Last week The Royal Festival Hall saw the first performance of a 
+new symphony by one of the world's leading modern composers, Arthur 'Two Sheds' Jackson"""
 
 newstring = []
 

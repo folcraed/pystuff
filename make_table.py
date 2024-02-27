@@ -1,8 +1,5 @@
-"""
-This is a file for things I'm learning, so it will change constantly.
-If there's something that I would like to save for the future, I will
-save it under a new file name.
-"""
+# Creates a multiplication table up to 9x9
+
 
 num = 9
 
