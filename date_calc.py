@@ -4,7 +4,8 @@ import datetime
 from dateutil.relativedelta import relativedelta
 
 
-def calcdiff():
+def calc_diff():
+    """Takes two user supplied dates and calculates the differences between them."""
     print("Enter the dates as '1899-3-14' (Year, Month, Day) when prompted")
 
     starting = input("Enter the first date: ")
@@ -28,7 +29,10 @@ def calcdiff():
     print(f"The difference from the first date is: {output}")
 
 
-def calcyear():
+def calc_date():
+    """Takes a user entered date, prompts for a difference in 'years,months,days' format,
+    and calculates the new date by subtracting the difference from the original date.
+    """
     print("Enter the starting date as year, month, day as year-month-day.")
     date_entered = input("What is the starting date?: ")
     stdate = datetime.datetime.strptime(date_entered, "%Y-%m-%d")
@@ -56,9 +60,9 @@ print
 choice = input("Which option?: ")
 
 if choice == "d":
-    calcdiff()
+    calc_diff()
 elif choice == "t":
-    calcyear()
+    calc_date()
 else:
     print("See you later!")
     exit()
