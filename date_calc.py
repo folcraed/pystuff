@@ -3,7 +3,7 @@
 import datetime
 from dateutil.relativedelta import relativedelta
 
-# Turns on and off bold text attribute
+# Turns on and off bold red text attribute. Used to draw attention to prompt NOTE
 b_on = "\033[1;31m"
 b_off = "\033[0m"
 
