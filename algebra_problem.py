@@ -87,7 +87,9 @@ if x_loc != last_place:
 else:
     num2 = problem[(op_pos + 1) : equals]
 
-# Knowing where x is, we turn that into a marker position, 0, 2 or 4.
+# We've broken the input string into 4 positions, 2 containing the
+# known numbers, one for "x" and one for the "=" sign.
+# Knowing where x is, we use one of the marker positions, 0, 2 or 4.
 # This position lets us know what is 'x' and what are numbers.
 if x_loc == last_place:
     x_loc = 4
@@ -96,7 +98,7 @@ elif x_loc == 0:
 else:
     x_loc = 2
 
-# Finally, using our marker position, we create the logic to evaluate x
+# Finally, using our marker positions, we create the logic to evaluate x
 if (operator == "+" and x_loc == 0) or (operator == "+" and x_loc == 2):
     subup(num2, num1)
 elif operator == "+" and x_loc == 4:
@@ -114,4 +116,4 @@ elif operator == "/" and x_loc == 0:
 elif (operator == "/" and x_loc == 2) or (operator == "/" and x_loc == 4):
     divup(num1, num2)
 else:
-    print("Something went wrong!")
+    print("Uh oh... Something went wrong!")
