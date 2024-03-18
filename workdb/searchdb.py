@@ -42,7 +42,9 @@ def view_employees():
 
 
 def search_employee_by_name():
-    """Searches the database for an employee by their name"""
+    """Searches the database for an employee by their name.
+    If there is no employee with that name, prints a
+    message telling the user employee doesn't exist."""
     employee = input("Which employee are you looking for?: ")
     employee_chosen = (
         "SELECT name, position FROM employees WHERE name = '%s'" % employee
@@ -56,7 +58,9 @@ def search_employee_by_name():
 
 
 def search_employee_by_title():
-    """Searches the database for employees by their occupation"""
+    """Searches the database for employees by their occupation.
+    If the occupation doesn't exist, prints a message
+    telling the user that position doesn't exist."""
     employee = input("Which occupation are you looking for?: ")
     employee_chosen = (
         "SELECT name, position FROM employees WHERE position = '%s'" % employee
