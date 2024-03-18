@@ -48,6 +48,8 @@ def search_employee_by_name():
         "SELECT name, position FROM employees WHERE name = '%s'" % employee
     )
     employee_description = execute_read_query(connection, employee_chosen)
+    if len(employee_description) == 0:
+        print(f"{employee} doesn't work here.")
     for chosen in employee_description:
         (first, title) = chosen
         print(f"{first} is company {title}.")
@@ -60,6 +62,8 @@ def search_employee_by_title():
         "SELECT name, position FROM employees WHERE position = '%s'" % employee
     )
     employee_description = execute_read_query(connection, employee_chosen)
+    if len(employee_description) == 0:
+        print(f"There is no {employee} position in this company.")
     for chosen in employee_description:
         (first, title) = chosen
         print(f"{first} is company {title}.")
