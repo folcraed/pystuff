@@ -7,8 +7,8 @@ from random import randint
 
 EMPTY = "."
 BATTLESHIP = "X"
-SHIPS = 3
-WIDTH = 5
+SHIPS = 4
+WIDTH = 4
 HEIGHT = 4
 SUNK = "X"
 
@@ -62,7 +62,7 @@ def getTarget():
         if len(cell) != 2:
             print("Please enter cell as XY,", "where X is a letter, and Y is a digit")
             continue
-        if cell[0] not in "ABCDE":
+        if cell[0] not in "ABCD":
             print(
                 "The first character of the cell",
                 "should be a letter in the range A-" + chr(ord("A") + WIDTH - 1),
@@ -77,7 +77,7 @@ def getTarget():
         return ord(cell[0]) - ord("A"), ord(cell[1]) - ord("1")
 
 
-# We create two separate lists, board and hidden.
+# We create two separate lists, board the player sees, and hidden containing the ships.
 board = []
 for i in range(HEIGHT):
     row = WIDTH * [EMPTY]
@@ -89,6 +89,9 @@ for i in range(HEIGHT):
     row = WIDTH * [EMPTY]
     hidden.append(row)
 
+
+# Add some space from the command prompt
+print()
 
 # We display the populated board created by the displayBoard function
 displayBoard(board)
@@ -109,7 +112,6 @@ while hits < SHIPS:
         board[y][x] = SUNK
         hits += 1
     else:
-
         # If missed, mark the board list to show that cell has already been tried
         print("\nMissed!\n")
         board[y][x] = "*"
@@ -118,4 +120,4 @@ while hits < SHIPS:
     # Show the current state of play.
     displayBoard(board)
 
-print(f"You needed {moves} moves to sink all battleships.")
+print(f"\nYou needed {moves} moves to sink all my battleships.")
