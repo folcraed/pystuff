@@ -10,7 +10,6 @@ not something that should be done often, but can have some advantages when
 used properly.
 """
 
-
 from pc_maze import the_entrance, the_exit, connected
 
 
