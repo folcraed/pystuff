@@ -76,15 +76,20 @@ def winner(b):
 # Start the game
 move = 0
 while True:
+    print()
+    print(f"Player {user} goes.\n")
     display_board(board)
+    print()
     get_row_column(r, c)
     if winner(board) is True:
+        print()
         display_board(board)
-        print(f"Player {user} has won!")
+        print(f"\nPlayer {user} has won!!!")
         break
     move += 1
     if move == MAXMOVE:  # If all 9 spaces are taken, call the game a draw
+        print()
         display_board(board)
-        print("Sorry, it's a draw.")
+        print("\nSorry, it's a draw.")
         break
     user = switch_player(user)
